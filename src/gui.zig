@@ -79,6 +79,9 @@ pub fn initWithExistingContext(allocator: std.mem.Allocator, ctx: Context) void 
         te.init();
     }
 }
+pub fn deinitWithoutDestroyingContext() void {
+    zguiSetAllocatorFunctions(null, null);
+}
 pub fn getCurrentContext() ?Context {
     return zguiGetCurrentContext();
 }
